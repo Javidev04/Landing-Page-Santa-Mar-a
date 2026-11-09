@@ -1,16 +1,191 @@
 ---
+import "../styles/global.css";
+
+const products = [
+	{ name: "Bidón retornable", volume: "20 L", image: "20" },
+	{ name: "Garrafón sin retorno", volume: "20 L", image: "20" },
+	{ name: "Botella familiar", volume: "6 L", image: "6" },
+	{ name: "Pack individual", volume: "12 x 500 ml", image: "12" },
+];
 ---
 
-<html lang="en">
+<!doctype html>
+<html lang="es" class="scroll-smooth">
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Agua Santa María: agua purificada y distribución a domicilio en Lima." />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Santa María | Agua purificada</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="m-0 bg-white font-[DM_Sans,sans-serif] text-[#183b50]">
+		<header class="sticky top-0 z-20 flex h-[84px] items-center gap-[30px] border-b border-[#edf2f4] bg-white/96 px-[5.5%] max-[760px]:h-[70px] max-[760px]:justify-between max-[760px]:px-[5%]">
+			<a class="flex min-w-[205px] items-center gap-[9px] max-[760px]:min-w-0" href="#" aria-label="Santa María, inicio">
+				<span class="grid size-[43px] place-items-center rounded-full bg-[#0879b8] text-white [&>svg]:h-[29px] [&>svg]:w-[29px] [&>svg]:fill-none [&>svg]:stroke-current [&>svg]:stroke-[2px] [&>svg>path:last-child]:stroke-[3.2px]" aria-hidden="true">
+					<svg viewBox="0 0 44 44"><path d="M22 3S8 19 8 29a14 14 0 0 0 28 0C36 19 22 3 22 3Z"/><path d="M15 31c2 5 12 6 15 0"/></svg>
+				</span>
+				<span><strong class="block font-[Manrope] text-[20px] font-extrabold leading-none text-[#0879b8] max-[480px]:text-[17px]">Santa María</strong><small class="mt-1 block text-[7px] tracking-[2.2px] text-[#6b8997]">AGUA PURIFICADA</small></span>
+			</a>
+			<nav class="nav ml-auto flex items-center gap-[clamp(18px,2vw,34px)] max-[760px]:absolute max-[760px]:left-0 max-[760px]:right-0 max-[760px]:top-[70px] max-[760px]:hidden max-[760px]:border-b max-[760px]:border-[#e4edef] max-[760px]:bg-white max-[760px]:px-[5%] max-[760px]:py-[20px] [&>a]:text-[14px] [&>a]:font-semibold [&>a]:text-[#446174] hover:[&>a]:text-[#0879b8] max-[1000px]:[&>a]:text-[12px]" aria-label="Navegación principal">
+				<a href="#inicio">Inicio</a>
+				<a href="#catalogo">Catálogo</a>
+				<a href="#cobertura">Cobertura</a>
+				<a href="#contacto">Contáctanos</a>
+				<a href="#reclamaciones">Libro de reclamaciones</a>
+			</nav>
+			<button class="h-[42px] cursor-pointer rounded-md border border-[#b8d3df] bg-white px-[18px] font-bold text-[#0879b8] max-[1000px]:hidden" type="button">Acceso personal</button>
+			<button class="menu-button hidden size-[40px] flex-col items-center justify-center gap-[5px] border-0 bg-transparent max-[760px]:flex" type="button" aria-label="Abrir menú" aria-expanded="false">
+				<span class="h-0.5 w-6 bg-[#123d57]"></span><span class="h-0.5 w-6 bg-[#123d57]"></span><span class="h-0.5 w-6 bg-[#123d57]"></span>
+			</button>
+		</header>
+
+		<main>
+			<section class="grid min-h-[590px] grid-cols-[51%_49%] overflow-hidden bg-[linear-gradient(112deg,#edf8fb_0%,#edf8fb_56%,#dff3f8_56%,#dff3f8_100%)] max-[1000px]:grid-cols-[55%_45%] max-[760px]:grid-cols-1" id="inicio">
+				<div class="px-[11%] pb-12 pt-[82px] max-[1000px]:pl-[7%] max-[760px]:px-[6%] max-[760px]:pb-10 max-[760px]:pt-[58px]">
+					<p class="mb-[14px] text-[12px] font-extrabold tracking-[2.2px] text-[#0879b8]">AGUA PURIFICADA A DOMICILIO</p>
+					<h1 class="m-0 font-[Manrope] text-[clamp(48px,5vw,72px)] font-extrabold leading-[1.02] tracking-[-3px] text-[#123d57] max-[760px]:text-[48px] max-[480px]:text-[40px]">La frescura que<br /><span class="text-[#0879b8]">cuida tu hogar</span></h1>
+					<p class="mb-7 mt-6 max-w-[480px] text-[18px] leading-[1.65] text-[#617e8d] max-[480px]:text-[16px]">Distribución segura, rápida y confiable de agua purificada para toda tu familia.</p>
+					<div class="flex items-center gap-7 max-[480px]:flex-col items-start gap-3">
+						<a class="inline-flex min-h-[52px] items-center justify-center gap-[22px] rounded-md border-0 bg-[#0879b8] px-[22px] font-extrabold text-white shadow-[0_10px_24px_rgba(8,121,184,.16)] [&>span]:text-[20px]" href="#contacto">Pedir agua ahora <span>→</span></a>
+						<a class="border-b border-[#9ab6c2] px-0 py-[7px] font-extrabold" href="#catalogo">Ver productos</a>
+					</div>
+					<div class="mt-[46px] flex gap-[38px] max-[1000px]:gap-[18px] max-[480px]:flex-wrap gap-3">
+						<div class="flex items-center gap-[10px] max-[480px]:w-[45%]"><strong class="font-[Manrope] text-[23px] font-extrabold text-[#0879b8]">+</strong><span class="text-[11px] font-bold leading-[1.3] text-[#66818f]">15 años<br />de experiencia</span></div>
+						<div class="flex items-center gap-[10px] max-[480px]:w-[45%]"><strong class="font-[Manrope] text-[23px] font-extrabold text-[#0879b8]">✓</strong><span class="text-[11px] font-bold leading-[1.3] text-[#66818f]">Entrega<br />segura</span></div>
+						<div class="flex items-center gap-[10px] max-[480px]:w-[45%]"><strong class="font-[Manrope] text-[23px] font-extrabold text-[#0879b8]">24</strong><span class="text-[11px] font-bold leading-[1.3] text-[#66818f]">Distritos<br />cubiertos</span></div>
+					</div>
+				</div>
+				<div class="relative grid place-items-center max-[760px]:min-h-[430px]" aria-label="Bidón de agua Santa María">
+					<div class="absolute size-[470px] rounded-full border border-[#0879b814] max-[760px]:size-[390px]"></div>
+					<div class="absolute size-[350px] rounded-full border border-[#0879b814] bg-white/28"></div>
+					<div class="relative z-[3] h-[470px] w-[270px] drop-shadow-[0_28px_18px_rgba(18,78,107,.13)] max-[1000px]:scale-[.82] max-[480px]:scale-[.78]">
+						<div class="absolute left-[112px] top-[2px] z-[4] h-6 w-[46px] rounded-[7px_7px_2px_2px] bg-[#0879b8]"></div>
+						<div class="absolute left-[104px] top-[20px] z-[2] h-[100px] w-[62px] rounded-[20px_20px_6px_6px] bg-[linear-gradient(90deg,#c5e8f2,#f8feff_36%,#badde7_78%,#a5ccd7)]"></div>
+						<div class="absolute bottom-0 left-[29px] h-[390px] w-[212px] overflow-hidden rounded-[48%_48%_38px_38px/17%_17%_38px_38px] border border-[#4f9ab04d] bg-[linear-gradient(90deg,#abd3df,#f3fdff_20%,white_48%,#d1ebf2_80%,#9ec6d2)]">
+								<div class="absolute left-[35px] top-[100px] h-[230px] w-[12px] rotate-[3deg] rounded-full bg-white/90"></div>
+								<div class="absolute bottom-[82px] left-[25px] h-[155px] w-[162px] rounded-[4px] border-t-[5px] border-[#55b7d8] bg-[linear-gradient(145deg,#138bc1,#0874ab)] pt-3 text-center text-white">
+									<div class="mb-[3px] h-[42px] [&>svg]:mx-auto [&>svg]:w-[38px] [&>svg]:fill-none [&>svg]:stroke-white [&>svg]:stroke-[2.2px]">
+									<svg viewBox="0 0 44 44"><path d="M22 3S8 19 8 29a14 14 0 0 0 28 0C36 19 22 3 22 3Z"/><path d="M15 31c2 5 12 6 15 0"/></svg>
+								</div>
+									<strong class="block font-[Manrope] text-[21px] font-extrabold">Santa María</strong>
+									<small class="block text-[7px] tracking-[2px]">AGUA PURIFICADA</small>
+									<b class="absolute bottom-2 right-[9px] text-[12px]">20 L</b>
+							</div>
+						</div>
+					</div>
+					<div class="absolute bottom-[80px] left-[5%] z-[4] size-[55px] rotate-[30deg] rounded-full border-[9px] border-[#65bbd652] border-l-transparent"></div>
+					<div class="absolute right-[4%] top-[110px] z-[4] size-[55px] scale-[.7] rotate-[-20deg] rounded-full border-[9px] border-[#65bbd652] border-l-transparent"></div>
+				</div>
+			</section>
+
+			<section class="px-[7%] py-[82px] max-[760px]:px-[5%] max-[760px]:py-[60px]" id="catalogo">
+				<div class="mx-auto mb-[34px] flex max-w-[1200px] items-end justify-between max-[760px]:items-start">
+					<div>
+						<p class="mb-[14px] text-[12px] font-extrabold tracking-[2.2px] text-[#0879b8]">NUESTROS PRODUCTOS</p>
+						<h2 class="m-0 font-[Manrope] text-[42px] font-extrabold leading-[1.1] tracking-[-1.5px] text-[#123d57] max-[760px]:text-[34px] max-[480px]:text-[32px]">Elige tu agua ideal</h2>
+					</div>
+					<a class="border-b border-[#a6c5d5] pb-[6px] text-[14px] font-extrabold text-[#0879b8] max-[760px]:hidden" href="#contacto">Ver catálogo completo <span class="text-[20px]">→</span></a>
+				</div>
+				<div class="mx-auto grid max-w-[1200px] grid-cols-4 gap-[18px] max-[1000px]:grid-cols-2 max-[760px]:grid-cols-2 max-[760px]:gap-[10px]">
+					{products.map((product, index) => (
+						<article class="min-h-[350px] rounded-lg border border-[#e7eff2] bg-[linear-gradient(160deg,#fff,#f6fbfc)] px-6 py-6 text-center transition hover:-translate-y-[3px] hover:border-[#acd7e7] max-[760px]:px-2 max-[480px]:min-h-[320px]">
+							<div class="relative mx-auto h-[220px] w-[150px] origin-bottom drop-shadow-[0_16px_8px_rgba(18,78,107,.09)] max-[480px]:scale-[.82]">
+								<div class="absolute left-[66px] top-[2px] z-[3] h-4 w-7 rounded-[5px_5px_2px_2px] bg-[#0879b8]"></div>
+								<div class="absolute left-[62px] top-[14px] h-[55px] w-9 rounded-[12px_12px_3px_3px] bg-[linear-gradient(90deg,#c1e2eb,#f9ffff,#a8ccd6)]"></div>
+								<div class={`absolute bottom-0 border border-[#c8e0e6] bg-[linear-gradient(90deg,#badde6,#fff_48%,#b2d6df)] ${index === 0 ? "left-[30px] h-[170px] w-[100px] rounded-[45%_45%_20px_20px/18%_18%_20px_20px]" : index === 1 ? "left-[30px] h-[180px] w-[100px] rounded-[45%_45%_20px_20px/18%_18%_20px_20px]" : index === 2 ? "left-[38px] h-[155px] w-[74px] rounded-[45%_45%_20px_20px/18%_18%_20px_20px]" : "left-[49px] h-[140px] w-[52px] rounded-[12px_12px_8px_8px]"}`}>
+									<div class="absolute bottom-[38px] left-[13px] flex h-[72px] w-[74px] flex-col justify-center rounded-[3px] bg-[#1989ba] text-white"><small class="text-[7px] font-extrabold">Santa María</small><b class="mt-[5px] text-[12px]">{product.image}{product.image === "12" ? "" : " L"}</b></div>
+								</div>
+							</div>
+							<p class="mb-0.5 mt-2 text-[13px] text-[#75909d]">{product.name}</p>
+							<h3 class="mb-3 mt-0 font-[Manrope] text-[20px] font-extrabold text-[#123d57]">{product.volume}</h3>
+							<a class="text-[13px] font-extrabold text-[#0879b8]" href="#contacto" aria-label={`Solicitar ${product.name}`}>Solicitar <span class="text-[20px]">→</span></a>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<section class="grid min-h-[480px] grid-cols-[58%_42%] bg-[#f1f8fa] max-[760px]:grid-cols-1" id="cobertura">
+				<div class="relative overflow-hidden bg-[linear-gradient(135deg,#d7edf3,#edf7f8)] max-[760px]:min-h-[350px]" aria-label="Mapa ilustrado de zonas de cobertura">
+					<div class="absolute -inset-10 opacity-55 bg-[linear-gradient(28deg,transparent_48%,rgba(255,255,255,.8)_49%,rgba(255,255,255,.8)_51%,transparent_52%),linear-gradient(118deg,transparent_48%,rgba(255,255,255,.8)_49%,rgba(255,255,255,.8)_51%,transparent_52%)] bg-[length:90px_80px,110px_100px]"></div>
+					<div class="absolute left-[22%] top-[55%] flex items-center gap-[7px] text-[11px] text-[#517789] [&>span]:size-[14px] [&>span]:rounded-full [&>span]:border-[3px] [&>span]:border-white [&>span]:bg-[#0879b8] [&>span]:shadow-[0_2px_8px_rgba(8,121,184,.25)]"><span></span><b>San Miguel</b></div>
+					<div class="absolute left-[47%] top-[30%] flex items-center gap-[7px] text-[11px] text-[#517789] [&>span]:size-[14px] [&>span]:rounded-full [&>span]:border-[3px] [&>span]:border-white [&>span]:bg-[#0879b8] [&>span]:shadow-[0_2px_8px_rgba(8,121,184,.25)]"><span></span><b>Jesús María</b></div>
+					<div class="absolute left-[31%] top-[75%] flex items-center gap-[7px] text-[11px] text-[#517789] [&>span]:size-[14px] [&>span]:rounded-full [&>span]:border-[3px] [&>span]:border-white [&>span]:bg-[#0879b8] [&>span]:shadow-[0_2px_8px_rgba(8,121,184,.25)]"><span></span><b>Miraflores</b></div>
+					<div class="absolute left-[64%] top-[68%] flex items-center gap-[7px] text-[11px] text-[#517789] [&>span]:size-[14px] [&>span]:rounded-full [&>span]:border-[3px] [&>span]:border-white [&>span]:bg-[#0879b8] [&>span]:shadow-[0_2px_8px_rgba(8,121,184,.25)]"><span></span><b>Surco</b></div>
+					<div class="absolute left-[72%] top-[38%] flex items-center gap-[7px] text-[11px] text-[#517789] [&>span]:size-[14px] [&>span]:rounded-full [&>span]:border-[3px] [&>span]:border-white [&>span]:bg-[#0879b8] [&>span]:shadow-[0_2px_8px_rgba(8,121,184,.25)]"><span></span><b>La Molina</b></div>
+				</div>
+				<div class="bg-[#edf7fa] px-[10%] py-[72px] pb-[60px] max-[760px]:px-[6%] max-[760px]:py-[60px]">
+					<p class="mb-[14px] text-[12px] font-extrabold tracking-[2.2px] text-[#0879b8]">COBERTURA</p>
+					<h2 class="m-0 font-[Manrope] text-[42px] font-extrabold leading-[1.1] tracking-[-1.5px] text-[#123d57] max-[760px]:text-[34px]">Entregamos en<br />todo Lima</h2>
+					<p class="mb-5 mt-5 max-w-[430px] leading-[1.7] text-[#678390]">Llegamos a más distritos con puntualidad y el mejor servicio. Consulta si tu zona está cubierta.</p>
+					<div class="mb-7 mt-5 grid grid-cols-2 gap-[10px] text-[13px] font-bold text-[#527588] [&>span]:before:mr-2 [&>span]:before:text-[#0879b8] [&>span]:before:content-['✓']"><span>Lima Norte</span><span>Lima Sur</span><span>Lima Este</span><span>Lima Centro</span></div>
+					<a class="inline-flex min-h-[52px] items-center justify-center gap-[22px] rounded-md border-0 bg-[#123d57] px-[22px] font-extrabold text-white shadow-[0_10px_24px_rgba(8,121,184,.16)] [&>span]:text-[20px]" href="#contacto">Consultar mi zona <span>→</span></a>
+				</div>
+			</section>
+
+			<section class="grid grid-cols-[43%_57%] gap-[70px] bg-[#123d57] px-[7%] py-[74px] text-white max-[760px]:grid-cols-1 max-[760px]:gap-10 max-[760px]:px-[5%]" id="contacto">
+				<div class="pl-[4%] max-[760px]:pl-0">
+					<p class="mb-[14px] text-[12px] font-extrabold tracking-[2.2px] text-[#72c7e7]">PIDE TU AGUA</p>
+					<h2 class="m-0 font-[Manrope] text-[42px] font-extrabold leading-[1.1] tracking-[-1.5px] text-white max-[760px]:text-[34px]">Agua fresca,<br />a un mensaje de distancia</h2>
+					<p class="mb-[30px] mt-5 leading-[1.7] text-[#b2c7d1]">Completa tus datos y coordinaremos tu pedido de la manera más rápida.</p>
+					<div class="flex items-center gap-[14px]">
+						<span class="grid size-[44px] place-items-center rounded-full bg-[#1e5a75]">☎</span>
+						<div><small class="block text-[#9db4c0]">También puedes llamarnos</small><strong class="text-[18px]">(01) 555-0123</strong></div>
+					</div>
+				</div>
+				<form class="order-form grid grid-cols-2 gap-4 rounded-lg bg-white p-[30px] text-[#183b50] max-[760px]:grid-cols-1 max-[480px]:p-5">
+					<label class="flex flex-col gap-2 text-[12px] font-extrabold">Nombre completo<input class="h-[48px] rounded-[5px] border border-[#d8e3e7] bg-white px-[13px] font-[DM_Sans] text-[14px] font-medium text-[#587281] outline-none focus:border-[#0879b8]" type="text" name="nombre" placeholder="Tu nombre" required /></label>
+					<label class="flex flex-col gap-2 text-[12px] font-extrabold">Distrito<input class="h-[48px] rounded-[5px] border border-[#d8e3e7] bg-white px-[13px] font-[DM_Sans] text-[14px] font-medium text-[#587281] outline-none focus:border-[#0879b8]" type="text" name="distrito" placeholder="Ej. Miraflores" required /></label>
+					<label class="flex flex-col gap-2 text-[12px] font-extrabold">Teléfono<input class="h-[48px] rounded-[5px] border border-[#d8e3e7] bg-white px-[13px] font-[DM_Sans] text-[14px] font-medium text-[#587281] outline-none focus:border-[#0879b8]" type="tel" name="telefono" placeholder="+51 999 999 999" required /></label>
+					<label class="flex flex-col gap-2 text-[12px] font-extrabold">Producto
+						<select class="h-[48px] rounded-[5px] border border-[#d8e3e7] bg-white px-[13px] font-[DM_Sans] text-[14px] font-medium text-[#587281] outline-none focus:border-[#0879b8]" name="producto">
+							<option>Bidón retornable 20 L</option>
+							<option>Garrafón sin retorno 20 L</option>
+							<option>Botella familiar 6 L</option>
+							<option>Pack individual 12 x 500 ml</option>
+						</select>
+					</label>
+					<button class="col-span-2 mt-1 inline-flex min-h-[52px] w-[180px] items-center justify-center gap-[22px] rounded-md border-0 bg-[#0879b8] px-[22px] font-extrabold text-white shadow-[0_10px_24px_rgba(8,121,184,.16)] max-[760px]:col-span-1 [&>span]:text-[20px]" type="submit">Enviar pedido <span>→</span></button>
+				</form>
+			</section>
+
+			<section class="flex min-h-[145px] items-center justify-between border-b border-[#d7e6eb] bg-[#e9f4f7] px-[7%] py-[34px] max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-5" id="reclamaciones">
+				<div class="flex items-center gap-[18px] max-[760px]:items-start">
+					<span class="grid size-[58px] place-items-center rounded-full bg-white text-[25px]">📖</span>
+					<div><h2 class="m-0 font-[Manrope] text-[24px] font-extrabold leading-[1.1] tracking-[-.5px] text-[#123d57] max-[480px]:text-[21px]">Libro de reclamaciones</h2><p class="mb-0 mt-[7px] max-w-[300px] text-[14px] text-[#718995]">Tu opinión es importante. Registra aquí tu queja o reclamo.</p></div>
+				</div>
+				<a class="border-b border-[#a6c5d5] pb-[6px] text-[14px] font-extrabold text-[#0879b8]" href="#">Ingresar reclamo <span>→</span></a>
+			</section>
+		</main>
+		<footer class="flex h-[110px] items-center justify-between px-[7%] text-[12px] text-[#78909b] max-[760px]:h-auto flex-wrap gap-5 px-[5%] py-[30px] max-[480px]:flex-col max-[480px]:items-start">
+			<a class="flex origin-left scale-[.85] min-w-[205px] items-center gap-[9px]" href="#">
+				<span class="grid size-[43px] place-items-center rounded-full bg-[#0879b8] text-white [&>svg]:h-[29px] [&>svg]:w-[29px] [&>svg]:fill-none [&>svg]:stroke-current [&>svg]:stroke-[2px]" aria-hidden="true">
+					<svg viewBox="0 0 44 44"><path d="M22 3S8 19 8 29a14 14 0 0 0 28 0C36 19 22 3 22 3Z"/><path d="M15 31c2 5 12 6 15 0"/></svg>
+				</span>
+				<span><strong class="block font-[Manrope] text-[20px] font-extrabold leading-none text-[#0879b8]">Santa María</strong><small class="mt-1 block text-[7px] tracking-[2.2px] text-[#6b8997]">AGUA PURIFICADA</small></span>
+			</a>
+			<p>© 2026 Agua Santa María. Todos los derechos reservados.</p>
+			<div class="flex gap-6"><a href="#">Términos</a><a href="#">Privacidad</a></div>
+		</footer>
+
+		<script>
+			const menuButton = document.querySelector(".menu-button");
+			const nav = document.querySelector(".nav");
+			menuButton?.addEventListener("click", () => {
+				const open = menuButton.getAttribute("aria-expanded") === "true";
+				menuButton.setAttribute("aria-expanded", String(!open));
+				nav?.classList.toggle("hidden", open);
+				nav?.classList.toggle("flex", !open);
+			});
+			document.querySelector(".order-form")?.addEventListener("submit", (event) => {
+				event.preventDefault();
+				const form = event.currentTarget;
+				const button = form.querySelector("button");
+				button.textContent = "¡Pedido enviado!";
+				setTimeout(() => { button.innerHTML = "Enviar pedido <span>→</span>"; form.reset(); }, 2500);
+			});
+		</script>
 	</body>
 </html>
